@@ -1,7 +1,7 @@
-<h1 class="text-warning">Ma vue d'albums</h1>
+<!-- <h1 class="text-warning">Ma vue d'albums</h1> -->
 <div class="row content">
   <div class="col-sm-4">
-    <app-album-details></app-album-details>
+    <app-album-details [album]="selectedAlbum"></app-album-details>
   </div>
   <div class="col-sm-8">
     <h1>{{ titlePage}}</h1>
@@ -25,11 +25,11 @@
             <span>{{ album.like}}</span>
           </ng-template>
 
-          <ng-template [ngIf]="album.like">
+          <ng-template [ngIf]="album.duration">
             <img src="../../assets/svg/si-glyph-timer.svg" alt="Time icon" style="width: 2rem; margin: 0.5rem">
             <span>{{ album.duration}} min</span>
           </ng-template>
-        <button class="btn btn-dark">Details</button>
+        <button class="btn btn-dark" (click)="onSelect(album)">Details</button>
       </div>
     </div>
   </div>

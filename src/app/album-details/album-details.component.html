@@ -1,1 +1,22 @@
-<p>album-details works!</p>
+
+
+  <div *ngIf="album" class="card">
+    <!--
+
+    -->
+    <!-- <pre> {{ album | json }}</pre> -->
+    <img src="{{album.url}}" alt="Group Music" class="card-img">
+    <div class="card-body">
+      <h5 class="card-title">{{album.title}}</h5>
+      <p class="card-text">Name: {{album.name}}</p>
+      <a href="#" class="btn btn-primary">Play &gt;&gt;</a>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">Lorem, ipsum dolor.</li>
+      <li class="list-group-item">Lorem, ipsum dolor.</li>
+      <li class="list-group-item">Lorem, ipsum dolor.</li>
+      <li class="list-group-item">Lorem, ipsum dolor.</li>
+      <li class="list-group-item">Lorem, ipsum dolor.</li>
+    </ul>
+  </div>
+

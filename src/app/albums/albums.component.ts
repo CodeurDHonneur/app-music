@@ -12,7 +12,14 @@ import { Album } from '../albums';
 export class AlbumsComponent {
   titlePage: string = "Page principale Albums Music";
   albums: Album[] = ALBUMS;
+  selectedAlbum!: Album | undefined;
+ 
   constructor(){
     console.log(this.albums);
+  }
+
+  onSelect(alb: Album){
+    console.log("album dont on veut voir le détail", alb);
+    this.selectedAlbum = alb;
   }
 }
