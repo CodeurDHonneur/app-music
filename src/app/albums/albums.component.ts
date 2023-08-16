@@ -12,14 +12,21 @@ import { Album } from '../albums';
 export class AlbumsComponent {
   titlePage: string = "Page principale Albums Music";
   albums: Album[] = ALBUMS;
-  selectedAlbum!: Album | undefined;
- 
+  selectedAlbum!: Album ;
+
+  /**Variable qui gère l'affichage des caractères (ou icons) [play] sur les albums en cours de lecture */
+  status: string | undefined;
+
   constructor(){
     console.log(this.albums);
   }
 
   onSelect(alb: Album){
-    console.log("album dont on veut voir le détail", alb);
+    // console.log("album dont on veut voir le détail", alb);
     this.selectedAlbum = alb;
+  }
+
+  playAlbum(a: Album){
+  this.status = a.id;
   }
 }

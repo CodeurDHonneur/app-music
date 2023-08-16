@@ -1,16 +1,16 @@
 <!-- <h1 class="text-warning">Ma vue d'albums</h1> -->
 <div class="row content">
   <div class="col-sm-4">
-    <app-album-details [album]="selectedAlbum"></app-album-details>
+    <app-album-details [album]="selectedAlbum" (onPlay)="playAlbum($event)"></app-album-details>
   </div>
   <div class="col-sm-8">
     <h1>{{ titlePage}}</h1>
 
-    <div class="card">
-      <div class="card-header">
-        Rap
+    <div class="card" *ngFor="let album of albums; let i = index; let isOdd = odd; let isEven = even">
+      <div class="card-header text-white" [ngClass]="{'bg-primary': isOdd, 'bg-success': isEven}" >
+       {{ i + 1}} Rap <span *ngIf="album.id === status"><i class="bi bi-play-fill"></i></span>
       </div>
-      <div class="card-body" *ngFor="let album of albums">
+      <div class="card-body" >
         <h5 class="card-title">{{ album.title}}</h5>
         <p class="card-text">{{ album.description}}</p>
         <ul class="list-inline" *ngIf="album.tags">
